@@ -1,0 +1,39 @@
+I (386467) main_TAG: totalize: 65945290.000000
+I (389737) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (388617) main_TAG: volume: 115.000000
+I (391887) main_TAG: 00 00 00 50 f6 71 8f 41 
+I (390737) main_TAG: totalize: 65945290.000000
+I (394037) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (392887) main_TAG: volume: 115.000000
+I (396207) main_TAG: 00 00 00 50 f6 71 8f 41 
+I (395037) main_TAG: totalize: 65945290.000000
+I (398377) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (397207) main_TAG: volume: 115.000000
+I (400547) main_TAG: 00 00 00 50 f6 71 8f 41 
+I (399377) main_TAG: totalize: 65945290.000000
+I (402717) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (401547) main_TAG: volume: 115.000000
+I (404887) main_TAG: 00 00 00 50 f6 71 8f 41 
+I (403717) main_TAG: totalize: 65945290.000000
+I (407057) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (405887) main_TAG: volume: 115.000000
+I (409197) main_TAG: 00 00 00 50 f6 71 8f 41 
+I (408057) main_TAG: totalize: 65945290.000000
+I (411367) main_TAG: 00 00 00 00 00 c0 5c 40 
+I (410197) main_TAG: volume: 115.000000
+I (413367) main_TAG: 00 00 00 00 00 00 00 00 
+I (412367) main_TAG: totalize: 0.000000
+I (415367) main_TAG: 00 00 00 00 00 00 00 00 
+I (414367) main_TAG: volume: 0.000000
+I (417367) main_TAG: 00 00 00 00 00 00 00 00 
+I (416367) main_TAG: totalize: 0.000000
+I (419367) main_TAG: 00 00 00 00 00 00 00 00 
+I (418367) main_TAG: volume: 0.000000
+I (421367) main_TAG: 00 00 00 00 00 00 00 00 
+I (420367) main_TAG: totalize: 0.000000
+I (423367) main_TAG: 00 00 00 00 00 00 00 00 
+I (422367) main_TAG: volume: 0.000000
+I (425367) main_TAG: 00 00 00 00 00 00 00 00 
+I (424367) main_TAG: totalize: 0.000000
+I (427367) main_TAG: 00 00 00 00 00 00 00 00 
+I (426367) main_TAG: volume: 0.000000

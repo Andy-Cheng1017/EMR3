@@ -1,0 +1,63 @@
+I (43) boot: ESP-IDF v4.4.6 2nd stage bootloader
+I (43) boot: compile time 14:41:52
+I (43) boot: chip revision: v0.4
+I (45) boot.esp32c3: SPI Speed      : 80MHz
+I (49) boot.esp32c3: SPI Mode       : DIO
+I (54) boot.esp32c3: SPI Flash Size : 4MB
+I (59) boot: Enabling RNG early entropy source...
+I (64) boot: Partition Table:
+I (68) boot: ## Label            Usage          Type ST Offset   Length
+I (75) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (83) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (90) boot:  2 factory          factory app      00 00 00010000 00100000
+I (98) boot: End of partition table
+I (102) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=08a20h ( 35360) map
+I (116) esp_image: segment 1: paddr=00018a48 vaddr=3fc8b800 size=00cc0h (  3264) load
+I (119) esp_image: segment 2: paddr=00019710 vaddr=40380000 size=06908h ( 26888) load
+I (132) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=18fa8h (102312) map
+I (151) esp_image: segment 4: paddr=00038fd0 vaddr=40386908 size=04d60h ( 19808) load
+I (158) boot: Loaded app from partition at offset 0x10000
+I (158) boot: Disabling RNG early entropy source...
+I (171) cpu_start: Unicore app
+I (171) cpu_start: Pro cpu up.
+I (180) cpu_start: Pro cpu start user code
+I (180) cpu_start: cpu freq: 160000000
+I (180) cpu_start: Application information:
+I (183) cpu_start: Project name:     EMR3
+I (187) cpu_start: App version:      0a1b4ee-dirty
+I (193) cpu_start: Compile time:     Feb  3 2024 14:41:38
+I (199) cpu_start: ELF file SHA256:  aeabc1506c6328aa...
+I (205) cpu_start: ESP-IDF:          v4.4.6
+I (210) cpu_start: Min chip rev:     v0.3
+I (214) cpu_start: Max chip rev:     v0.99 
+I (219) cpu_start: Chip rev:         v0.4
+I (224) heap_init: Initializing. RAM available for dynamic allocation:
+I (231) heap_init: At 3FC8D340 len 0004F3D0 (316 KiB): DRAM
+I (237) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM
+I (244) heap_init: At 50000020 len 00001FE0 (7 KiB): RTCRAM
+I (251) spi_flash: detected chip: generic
+I (255) spi_flash: flash io: dio
+I (259) sleep: Configure to isolate all GPIO pins in sleep state
+I (266) sleep: Enable automatic switching of GPIO sleep configuration
+I (273) cpu_start: Starting scheduler.
+I (277) main_TAG: Hello world!
+I (1447) main_TAG: 00 00 00 00 00 90 78 40 
+I (277) main_TAG: volume: 393.000000
+I (3577) main_TAG: 00 00 00 b8 f2 71 8f 41 
+I (2447) main_TAG: totalize: 65945175.000000
+I (5677) main_TAG: 00 00 00 00 00 90 78 40 
+I (4577) main_TAG: volume: 393.000000
+I (7807) main_TAG: 00 00 00 b8 f2 71 8f 41 
+I (6677) main_TAG: totalize: 65945175.000000
+I (9937) main_TAG: 00 00 00 00 00 90 78 40 
+I (8807) main_TAG: volume: 393.000000
+I (12037) main_TAG: 00 00 00 b8 f2 71 8f 41 
+I (10937) main_TAG: totalize: 65945175.000000
+I (14187) main_TAG: 00 00 00 00 00 90 78 40 
+I (13037) main_TAG: volume: 393.000000
+I (16307) main_TAG: 00 00 00 b8 f2 71 8f 41 
+I (15187) main_TAG: totalize: 65945175.000000
+I (18467) main_TAG: 00 00 00 00 00 90 78 40 
+I (17307) main_TAG: volume: 393.000000
+I (20627) main_TAG: 00 00 00 b8 f2 71 8f 41 
+I (19467) main_TAG: totalize: 65945175.000000
