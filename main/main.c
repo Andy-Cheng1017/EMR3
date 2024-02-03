@@ -37,15 +37,14 @@ uint8_t checksum = 0x01 + 0xFF;
 //   Preset_volume_for_current_product_t = 'c',
 // };
 
-uint8_t Net_total_quantity_of_current_shift_t[2] = {0x47,0x61};
-uint8_t Gross_total_quantity_of_current_shift_t[2] = {0x47,0x62};
-uint8_t Preset_volume_for_current_product_t[2] = {0x47,0x63};  
+uint8_t Real_time_volume_t[2] = {0x47,0x4B};
+uint8_t Real_time_totalize_t[2] = {0x47,0x4C};
+
 
 struct meter_fields
 {
-  double Net_total_quantity_of_current_shift;
-  double Gross_total_quantity_of_current_shift; 
-  float Preset_volume_for_current_product;
+  double Real_time_volume;
+  double Real_time_totalize; 
 };
 
 struct meter_fields *meter_fields;
@@ -109,7 +108,9 @@ void uart_task(void *arg) {
   while (1) {
     // meter_fields->Net_total_quantity_of_current_shift = EMR3_read(Net_total_quantity_of_current_shift_t, sizeof(Net_total_quantity_of_current_shift_t));
     // EMR3_read(Net_total_quantity_of_current_shift_t, sizeof(Net_total_quantity_of_current_shift_t));
-    ESP_LOGI("main_TAG", "Net_total_quantity_of_current_shift: %f", EMR3_read(Net_total_quantity_of_current_shift_t, sizeof(Net_total_quantity_of_current_shift_t)));
+    // ESP_LOGI("main_TAG", "Net_total_quantity_of_current_shift: %f", EMR3_read(Net_total_quantity_of_current_shift_t, sizeof(Net_total_quantity_of_current_shift_t)));
+    EMR3_read(Real_time_volume_t, sizeof(Real_time_volume_t));
+    EMR3_read(Real_time_totalize_t, sizeof(Real_time_totalize_t));
     // ESP_LOGI("main_TAG", "Hello world!");
     vTaskDelay(1000 / portTICK_PERIOD_MS);
     // Read data from the UART
