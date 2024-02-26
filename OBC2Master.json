@@ -1,0 +1,62 @@
+{
+    "record1":{
+            "Real_time_volume" : 0.0,
+            "Real_time_totalize" : 0.0,
+            "time":{
+                "year" : 1970,
+                "month" : 1,
+                "day" : 1,
+                "hour" : 0,
+                "minute" : 0,
+                "second" : 0      
+            }
+    },
+    "record2":{
+            "Real_time_volume" : 0.0,
+            "Real_time_totalize" : 0.0,
+            "time":{
+                "year" : 1970,
+                "month" : 1,
+                "day" : 1,
+                "hour" : 0,
+                "minute" : 0,
+                "second" : 0      
+            }
+    },
+    "record3":{
+            "Real_time_volume" : 0.0,
+            "Real_time_totalize" : 0.0,
+            "time":{
+                "year" : 1970,
+                "month" : 1,
+                "day" : 1,
+                "hour" : 0,
+                "minute" : 0,
+                "second" : 0      
+            }
+    },
+    "record4":{
+            "Real_time_volume" : 0.0,
+            "Real_time_totalize" : 0.0,
+            "time":{
+                "year" : 1970,
+                "month" : 1,
+                "day" : 1,
+                "hour" : 0,
+                "minute" : 0,
+                "second" : 0      
+            }
+    },
+    "record5":{
+            "Real_time_volume" : 0.0,
+            "Real_time_totalize" : 0.0,
+            "time":{
+                "year" : 1970,
+                "month" : 1,
+                "day" : 1,
+                "hour" : 0,
+                "minute" : 0,
+                "second" : 0      
+            }
+    }
+}
