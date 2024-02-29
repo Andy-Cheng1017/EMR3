@@ -10,10 +10,48 @@
 #include "driver/spi_master.h"
 // #include "cJSON.h"
 
-
+#define STATIC_IP_ADDR        "192.168.1.51"
+#define STATIC_NETMASK_ADDR   "255.255.255.0"
+#define STATIC_GW_ADDR        "192.168.1.1"
+#define MAIN_DNS_SERVER       "8.8.8.8"
+#define BACKUP_DNS_SERVER     "4.4.4.4"
 #include "ethernet.h"
 
 #define TAG "ethernet"
+
+esp_netif_t *eth_netif_spi[1] = {NULL};
+
+static esp_err_t example_set_dns_server(esp_netif_t *netif, uint32_t addr, esp_netif_dns_type_t type)
+{
+    if (addr && (addr != IPADDR_NONE)) {
+        esp_netif_dns_info_t dns;
+        dns.ip.u_addr.ip4.addr = addr;
+        dns.ip.type = IPADDR_TYPE_V4;
+        ESP_ERROR_CHECK(esp_netif_set_dns_info(netif, type, &dns));
+    }
+    return ESP_OK;
+}
+
+static void set_static_ip(esp_netif_t *netif)
+{
+    ESP_LOGI(TAG, "OK, set static ip");
+    if (esp_netif_dhcpc_stop(netif) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to stop dhcp client");
+        return;
+    }
+    esp_netif_ip_info_t ip;
+    memset(&ip, 0 , sizeof(esp_netif_ip_info_t));
+    ip.ip.addr = ipaddr_addr(STATIC_IP_ADDR);
+    ip.netmask.addr = ipaddr_addr(STATIC_NETMASK_ADDR);
+    ip.gw.addr = ipaddr_addr(STATIC_GW_ADDR);
+    if (esp_netif_set_ip_info(netif, &ip) != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to set ip info");
+        return;
+    }
+    ESP_LOGD(TAG, "Success to set static ip: %s, netmask: %s, gw: %s", STATIC_IP_ADDR, STATIC_NETMASK_ADDR, STATIC_GW_ADDR);
+    ESP_ERROR_CHECK(example_set_dns_server(netif, ipaddr_addr(MAIN_DNS_SERVER), ESP_NETIF_DNS_MAIN));
+    ESP_ERROR_CHECK(example_set_dns_server(netif, ipaddr_addr(BACKUP_DNS_SERVER), ESP_NETIF_DNS_BACKUP));
+}
 
 static void eth_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
   uint8_t mac_addr[6] = {0};
@@ -30,7 +68,8 @@ static void eth_event_handler(void *arg, esp_event_base_t event_base, int32_t ev
       ESP_LOGI(TAG, "Ethernet Link Down");
       break;
     case ETHERNET_EVENT_START:
-      ESP_LOGI(TAG, "Ethernet Started");
+      ESP_LOGI(TAG, "Ethernet Started");      
+      set_static_ip(eth_netif_spi[0]);
       break;
     case ETHERNET_EVENT_STOP:
       ESP_LOGI(TAG, "Ethernet Stopped");
@@ -61,7 +100,6 @@ void initEth(void) {
 
   esp_netif_inherent_config_t esp_netif_config = ESP_NETIF_INHERENT_DEFAULT_ETH();
   esp_netif_config_t cfg_spi = {.base = &esp_netif_config, .stack = ESP_NETIF_NETSTACK_DEFAULT_ETH};
-  esp_netif_t *eth_netif_spi[1] = {NULL};
   char if_key_str[10];
   char if_desc_str[10];
   char num_str[3];
